@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и авторизация</title>
+    <!-- styles -->
+     <link rel="stylesheet" href="style.css">
+     <!-- scripts -->
+      <script src="./libs/jquery-3.7.1.min.js" defer></script>
+      <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="registration">
+            <h2>Регистрация</h2>
+            <span class="form__success">Регистрация прошла успешно!</span>
+            <span class="form__error">Ошибка при регистрации!</span>
+            <div>
+                <label for="name">Введите имя</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="email">Введите email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="password">Введите пароль</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <label for="password_double">Повторите пароль</label>
+                <input type="password" name="password_double" id="password_double" required>
+            </div>
+            <div class="form__checkbox">
+                <input type="checkbox" name="rules" id="rules">
+                <label for="rules">Я принимаю все условия регистрации</label>
+            </div>
+            <input type="submit" value="Зарегистрироваться" id="submit" disabled>
+            <span class="form__info">Если у Вас есть аккаунт <button type="button" id="on_auth">Войдите</button></span>
+        </form>
+        <form class="form" action="./php-code/authorization.php" method="post" id="authorization">
+            <h2>Авторизация</h2>
+            <span class="form__success">Регистрация прошла успешно!</span>
+            <span class="form__error">Ошибка при регистрации!</span>
+            <div>
+                <label for="email">Введите email</label>
+                <input type="email" name="email" id="email_auth">
+            </div>
+            <div>
+                <label for="password">Введите пароль</label>
+                <input type="password" name="password" id="password_auth">
+            </div>
+            <input type="submit" value="Войти" id="submit_auth">
+            <span class="form__info">Если у Вас нет аккаунт <button type="button" id="on_reg">Зарегистрируйтесь</button></span>
+        </form>
+    </div>
+</body>
+</html>
